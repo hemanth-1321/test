@@ -1,3 +1,3 @@
-function sum(a, c) {
-  console.log(a + b);
+function sum(a: number, c: number) {
+  console.log(a + c);
 }
