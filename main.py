@@ -1,8 +1,6 @@
+from helper import sum ,subtract
 
-
-
-def subtract(a, b):
-	return a - b
-
-
-
+def result():
+    print(sum(5,8))
+    print(subtract(9,10))
+    
