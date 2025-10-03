@@ -1,10 +1,15 @@
-from helper import ssum ,subtract,div
+from helper import sum ,subtract,div
 
 def result():
-    print(ssum(5,8))
+    print(sum(5,8))
     print(subtract(9,10))
-    print(mutlipy1(8,9))
-    print(div(8,8))
+    print(mutlipy(8,9))
+    print(mutlipy)
     
-def mutlipy1(a,b):
+def mutlipy(a,b):
     return a*b
+
+def sum(a,b):
+    print(a+b)
+    
+sum(1,9)
