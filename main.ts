@@ -5,9 +5,13 @@ function sum(a: number, c: number) {
 }
 
 sum(4, 5);
-multiply1(5, 3);
+// multiply1(5, 3);
 
 sum(9, 0);
 
 sum(4, 5);
-multiply1(5, 3);
+// multiply1(5, 3);
+
+export function square(n: number): number {
+  return n * n;
+}
