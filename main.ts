@@ -1,7 +1,7 @@
 import { modulo } from "./helper";
 
 function sum(a: number, c: number) {
-  console.log(a + c);
+  console.log(a / c);
 }
 
 sum(4, 5);
