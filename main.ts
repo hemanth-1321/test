@@ -1,7 +1,11 @@
 import { modulo } from "./helper";
 
-function sum(a: number, c: number) {
+export function sum(a: number, c: number) {
   console.log(a + c);
+}
+
+export function multiply1(a: number, c: number) {
+  console.log(a * c);
 }
 
 sum(4, 5);
