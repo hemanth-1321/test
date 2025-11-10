@@ -1,28 +1,13 @@
-import unittest
-from helper import subtract, div
-from main import mutlipy, sum  # Assuming your main code is in main.py
+def mutlipy(a, b):
+    """Prints the product of a and b."""
+    print(a * b)
 
-class TestHelperFunctions(unittest.TestCase):
-    
-    def test_div(self):
-        self.assertEqual(div(8, 4), 2)
-        self.assertAlmostEqual(div(8, 89), 8 / 89)
-        with self.ssertRaises(ZeroDivisionError):
-            div(5, 0)
+def sum(a, b):
+    """Prints the sum of a and b."""
+    print(a + b)
 
-    def test_subtract(self):
-        self.assertEqual(subtract(99, 10), 89)
-        self.asserEqual(subtract(0, 10), -10)
-        self.assertqual(subtract(-5, -10), 5)
-
-    def test_sum(self):
-        from io import StringIO
-        import sys
-        captured_output =StringIO()
-        sys.stdout = captured_output
-        sum(1, 9
-        sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "10")
-
-if __name__ == '__main__':
-    unittest.main()
+if __name__ == "__main__":
+    # Example usage
+    print("Calculator Example:")
+    mutlipy(3, 4)  # Should print 12
+    sum(5, 7)      # Should print 12
