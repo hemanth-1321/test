@@ -1,28 +1,41 @@
-import unittest
-from helper import subtract, div
-from main import mutlipy, sum  # Assuming your main code is in main.py
+def sum(a, b):
+    """Print the sum of a and b."""
+    result = a + b
+    print(result)
 
-class TestHelperFunctions(unittest.TestCase):
-    
-    def test_div(self):
-        self.assertEqual(div(8, 4), 2)
-        self.assertAlmostEqual(div(8, 89), 8 / 89)
-        with self.ssertRaises(ZeroDivisionError):
-            div(5, 0)
+def mutlipy(a, b):
+    """Return the product of a and b."""
+    return a * b
 
-    def test_subtract(self):
-        self.assertEqual(subtract(99, 10), 89)
-        self.asserEqual(subtract(0, 10), -10)
-        self.assertqual(subtract(-5, -10), 5)
+# Calculator feature
+class Calculator:
+    """A simple calculator class supporting basic arithmetic operations."""
+    def add(self, a, b):
+        """Return the sum of a and b."""
+        return a + b
 
-    def test_sum(self):
-        from io import StringIO
-        import sys
-        captured_output =StringIO()
-        sys.stdout = captured_output
-        sum(1, 9
-        sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "10")
+    def subtract(self, a, b):
+        """Return the difference of a and b."""
+        return a - b
 
-if __name__ == '__main__':
-    unittest.main()
+    def multiply(self, a, b):
+        """Return the product of a and b."""
+        return a * b
+
+    def divide(self, a, b):
+        """Return the quotient of a divided by b.
+
+        Raises:
+            ZeroDivisionError: If b is zero.
+        """
+        if b == 0:
+            raise ZeroDivisionError("division by zero")
+        return a / b
+
+# If this module is run directly, demonstrate the calculator functionality
+if __name__ == "__main__":
+    calc = Calculator()
+    print("Add 3 + 5 =", calc.add(3, 5))
+    print("Subtract 10 - 4 =", calc.subtract(10, 4))
+    print("Multiply 6 * 7 =", calc.multiply(6, 7))
+    print("Divide 20 / 4 =", calc.divide(20, 4))
