@@ -7,3 +7,6 @@ def subtract(a, b):
 
 def div(a,b):
     return a/b
+
+def square(n):
+    return n * n
