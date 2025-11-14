@@ -1,28 +1,37 @@
-import unittest
-from helper import subtract, div
-from main import mutlipy, sum  # Assuming your main code is in main.py
+def sum(a, b):
+    """Calculate the sum of two numbers and print the result."""
+    result = a + b
+    print(result)
+    return result
 
-class TestHelperFunctions(unittest.TestCase):
-    
-    def test_div(self):
-        self.assertEqual(div(8, 4), 2)
-        self.assertAlmostEqual(div(8, 89), 8 / 89)
-        with self.ssertRaises(ZeroDivisionError):
-            div(5, 0)
+def multiply(a, b):
+    """Calculate the product of two numbers and print the result."""
+    result = a * b
+    print(result)
+    return result
 
-    def test_subtract(self):
-        self.assertEqual(subtract(99, 10), 89)
-        self.asserEqual(subtract(0, 10), -10)
-        self.assertqual(subtract(-5, -10), 5)
+if __name__ == "__main__":
+    import sys
 
-    def test_sum(self):
-        from io import StringIO
-        import sys
-        captured_output =StringIO()
-        sys.stdout = captured_output
-        sum(1, 9
-        sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "10")
+    if len(sys.argv) < 4:
+        print("Usage:")
+        print("  python main.py sum <num1> <num2>")
+        print("  python main.py multiply <num1> <num2>")
+        sys.exit(1)
 
-if __name__ == '__main__':
-    unittest.main()
+    operation = sys.argv[1].lower()
+    try:
+        num1 = float(sys.argv[2])
+        num2 = float(sys.argv[3])
+    except ValueError:
+        print("Error: Both numbers must be valid numeric values.")
+        sys.exit(1)
+
+    if operation == "sum":
+        sum(num1, num2)
+    elif operation == "multiply":
+        multiply(num1, num2)
+    else:
+        print(f"Unknown operation: {operation}")
+        print("Supported operations: sum, multiply")
+        sys.exit(1)
