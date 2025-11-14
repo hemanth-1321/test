@@ -1,15 +1,3 @@
-/**
- * helper.js
- * Common interview helpers: prime checks, fibonacci, factorial, string utilities, two-sum.
- *
- * Usage examples:
- *   const h = require('./helper');
- *   h.isPrime(7)           // true
- *   h.primesUpTo(20)      // [2,3,5,7,11,13,17,19]
- *   h.fibonacciList(7)    // [0,1,1,2,3,5,8]
- *   h.fibonacci(7)        // 13  (7th fibonacci, 0-based -> f(0)=0, f(1)=1)
- *   h.isPalindrome('radar') // true
- */
 
 'use strict';
 
