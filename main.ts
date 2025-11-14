@@ -1,13 +1,25 @@
 import { modulo } from "./helper";
 
-function sum(a: number, c: number) {
-  console.log(a + c);
+interface Calculator {
+  add(a: number, b: number): number;
+  multiply(a: number, b: number): number;
+  modulo(a: number, b: number): number;
 }
 
-sum(4, 5);
-multiply1(5, 3);
+class SimpleCalculator implements Calculator {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+  multiply(a: number, b: number): number {
+    return a * b;
+  }
+  modulo(a: number, b: number): number {
+    return modulo(a, b);
+  }
+}
 
-sum(9, 0);
+const calc: Calculator = new SimpleCalculator();
 
-sum(4, 5);
-multiply1(5, 3);
+console.log(calc.add(4, 5));
+console.log(calc.multiply(5, 3));
+console.log(calc.modulo(10, 3));
